@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="NASA APOD API">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA"
+        rel="icon" type="image/x-icon" />
+    <title>NASA APOD</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js.js') }}"></script>
+</head>
+
+
+<body class="bg-space">
+    <nav id="nav" class="navbar">
+        <a href="https://apod.nasa.gov/"><span class="navbar-text text-light">APOD</span></a>
+        <a href="https://github.com/weakit/GCI19-NasaApod">
+            <span class="navbar-text text-light">View on Github</span>
+        </a>
+    </nav>
+
+    <div class="container text-white">
+        <span class="smol display-4">NASA APOD <small>API</small></span>
+        <p class="lead">Featured pictures from NASA's Astronomy Picture of the Day.</p>
+    </div>
+
+    <div class="pt-3 container">
+        <div class="list-group text-body">
+            <ul class="list-group-item clearfix text-dark">
+                <div class="pt-2 pb-3 input-group date text-dark" data-provide="datepicker">
+                    <input type="text" placeholder="YYYY/MM/DD" class="text-dark datepicker form-control">
+                </div>
+                <div class="pb-3 ">
+                    <span onclick="get_image();" class="float-right btn btn-primary">Get Image</span>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pt-3 container">
+        <div class="list-group text-body">
+            <ul class="list-group-item clearfix">
+                <div class="float-left clearfix pt-2 pb-3">
+                    <span class="smol text-body">TODAY'S ASTRONOMY PICTURE OF THE DAY</span>
+                    <h3 class="h3 text-body py-2">{{ title }}</h3>
+                    <a target="blank" href="{{ img_url }}"><img src="{{ img_url }}" /></a>
+                    <p style="font-size: .8em; text-transform: uppercase;" class="pt-3 smol text-muted">{{ credits }}
+                    </p>
+                    <p style="text-align: justify;" class="text-body">{{ summary }}</p>
+                    <span onclick="open_pdf();" class="float-right clearfix btn btn-primary">Get PDF</span>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <div id="files" class="pt-3 list-group text-body"></div>
+    </div>
+    <div style="text-align: center; opacity: .7;" class="py-3">
+        <a target="blank;" class="text-light" href="https://images.nasa.gov/details-PIA15985">JPL/NASA/ESA/STScI</a>
+    </div>
+</body>
+
+</html>

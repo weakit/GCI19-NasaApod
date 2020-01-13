@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Rubik:500&display=swap");
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "IBM Plex Sans", "Helvetica",
+    "Arial", sans-serif !important;
+  font-kerning: normal;
+  min-height: 100vh;
+}
+
+#nav {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.bg-space {
+    background-image: url("https://images-assets.nasa.gov/image/PIA15985/PIA15985~orig.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #040c24!important;
+}
+
+.four04 {
+    font-family: -apple-system, BlinkMacSystemFont, "Rubik", "IBM Plex Sans", "Helvetica",
+    "Arial", sans-serif !important;
+}
+
+.smol {
+    font-family: -apple-system, BlinkMacSystemFont, "Rubik", "IBM Plex Sans", "Helvetica",
+    "Arial", sans-serif !important;
+    font-weight: 500 !important;
+    font-variant: small-caps;
+}
+
+img {
+    max-width: 100%;
+}
+
+.h5 {
+  font-family: -apple-system, BlinkMacSystemFont, "IBM Plex Sans", "Helvetica",
+    "Arial", sans-serif !important;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
