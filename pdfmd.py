@@ -3,7 +3,8 @@ from weasyprint import HTML, CSS
 import os
 import time
 
-CSS_ = """body { font-family: sans-serif !important }
+CSS_ = """@import url('https://fonts.googleapis.com/css?family=Arimo&display=swap');
+body { font-family: Arimo, sans-serif !important; }
 img { max-width: 100%; }
 p { text-align: justify; hyphens: auto;}
 """
