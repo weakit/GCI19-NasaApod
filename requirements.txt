@@ -1,0 +1,6 @@
+flask
+Markdown
+weasyprint
+requests
+beautifulsoup4
+gunicorn
